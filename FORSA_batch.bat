@@ -14,8 +14,8 @@ call %CONDAPATH%\Scripts\activate.bat %ENVPATH%
 
 rem Run a python script in that environment
 rem python NEMO_main_CIFAR10.py --ptq True --epoch 25 --lr 0.0001 --init mnist_cnn_fp.pt --qat True --bit %%q  --pretrain True
-FOR %%q IN (4) DO (
-	FOR %%f IN (3 2) DO (
+FOR %%q IN (32) DO (
+	FOR %%f IN (24 16 12 8) DO (
 		python D:\PhD_work\Thesis\FORSA\main_LeNet_FORSA.py --bit %%q --frac_size %%f
     )
 )
