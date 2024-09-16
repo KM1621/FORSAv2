@@ -47,7 +47,7 @@ def sortFullBinMatrix_V2(mat_in):
 # New sorting function (Faster)
 ######## Faster method to calcuate switching activity
 def association(I,II):
-    B = ((I.reshape(-1,1) & (2**np.arange(word_size))) != 0).astype(int)
+    B = ((I.reshape(-1,1) & (2**np.arange(word_size))) != 0).astype(int) #Multiply word size and truncate
     A = ((II.reshape(-1,1) & (2**np.arange(word_size))) != 0).astype(int)
     return np.logical_xor(A[:,::-1],B[:,::-1]).astype(np.int8) # for the binary values, the binding or assossiation is xor operation.
 
@@ -77,7 +77,7 @@ def sortFullMatrix_V2(mat_in): #Using full row as one vector
     dim_shape = np.count_nonzero(mat_in.shape)-1
     mat1 =   torch.flatten(mat_in.data.cpu(), -1*dim_shape).numpy()
     height = np.size(mat1, 0)
-    mat1 = (mat1 * (2**frac_size)).astype(int)
+    mat1 = (mat1 * (2**frac_size)).astype(int) #Multiply frac size and truncate
     original_index=[]
     original_index = np.asanyarray([i for i in range(height)])
     for row in range(height - 2): # Iterate until total rows - 2 or 3
