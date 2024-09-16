@@ -1,11 +1,13 @@
 # FORSAv2: Sorting filters of a pre-traned DNN model for reducing switching activity
+
 Filter reordering technique for reducing dynamic power consumption of a pre-trained model inference List of notebooks to reproduce the results presented in our paper.
 ![Filter sorting in a convolution layer and using the index obtained from sorting to re-order filters of the a succeeding
 layer along its channel](https://github.com/KM1621/FORSAv2/blob/main/Figures/Fig4.gif)
+
 ![Filter sorting in a fully connected layer and using the index obtained from sorting to re-order filters of the a succeeding
 layer](https://github.com/KM1621/FORSAv2/blob/main/Figures/Fig5.gif)
 
-
+![Demonstrating how sorting and reordering preserves output feature map matrix](https://github.com/KM1621/FORSAv2/blob/main/Figures/Fig3.gif)
 # List of scripts and notebooks used in FORSAv2 paper
 1. Sorting a binary matrix based on bit flips between successive rows of a matrix. [Interconnect post alyout simulation](https://github.com/KM1621/FORSAv2/blob/main/WireModels/Sort_list_wiremodel.ipynb)
    ![Bit flips between successive rows of a Matrix before
